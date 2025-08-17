@@ -1,6 +1,6 @@
 import express, { type Request, Response, NextFunction } from "express";
-import { registerRoutes } from "./routes.ts";
-import { log } from "./vite.ts"; // Assuming you still want the log utility
+import { registerRoutes } from "./routes.js";
+import { log } from "./vite.js"; // Assuming you still want the log utility
 
 const app = express();
 app.use(express.json());
