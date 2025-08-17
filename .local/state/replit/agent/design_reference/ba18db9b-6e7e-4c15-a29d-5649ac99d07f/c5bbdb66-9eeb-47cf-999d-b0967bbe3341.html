@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AstraZeneca Clinical Trials Portal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'az-magenta': '#8A0051',
+                        'az-gold': '#EFAB00',
+                        'phase-1': '#8A0051',
+                        'phase-2': '#4F46E5',
+                        'phase-3': '#EFAB00',
+                        'phase-4': '#059669'
+                    },
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        };
+    </script>
+</head>
+<body class="font-inter bg-gray-50 text-gray-900">
+    
+    <!-- @COMPONENT: Header [navigation, branding] -->
+    <header class="bg-az-magenta shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center space-x-3">
+                    <!-- AstraZeneca Logo Placeholder -->
+                    <div class="w-10 h-10 bg-az-gold rounded-lg flex items-center justify-center">
+                        <span class="text-az-magenta font-bold text-xl">AZ</span>
+                    </div>
+                    <div>
+                        <h1 class="text-xl font-bold text-white">Clinical Trials Portal</h1>
+                        <p class="text-pink-200 text-sm">Advancing Healthcare Research</p>
+                    </div>
+                </div>
+                
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="#" class="text-white hover:text-az-gold transition-colors duration-200 font-medium">Trials</a>
+                    <a href="#" class="text-white hover:text-az-gold transition-colors duration-200 font-medium">Research</a>
+                    <a href="#" class="text-white hover:text-az-gold transition-colors duration-200 font-medium">Contact</a>
+                    <button class="bg-az-gold hover:bg-yellow-500 text-az-magenta px-4 py-2 rounded-lg font-semibold transition-colors duration-200">
+                        Sign In
+                    </button>
+                </nav>
+                
+                <!-- Mobile menu button -->
+                <button class="md:hidden text-white hover:text-az-gold">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+    <!-- @END_COMPONENT: Header -->
+
+    <!-- @COMPONENT: Hero [main CTA, introduction] -->
+    <section class="bg-az-magenta text-white py-20 lg:py-32">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-4xl mx-auto">
+                <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                    Pioneering Clinical Research for 
+                    <span class="text-az-gold">Better Health Outcomes</span>
+                </h2>
+                <p class="text-xl md:text-2xl mb-8 text-pink-100 leading-relaxed">
+                    Discover groundbreaking clinical trials that are shaping the future of medicine. 
+                    Join us in advancing healthcare research and improving patient lives worldwide.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <button class="bg-az-gold hover:bg-yellow-500 text-az-magenta px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
+                        Explore Clinical Trials
+                    </button>
+                    <button class="border-2 border-az-gold text-az-gold hover:bg-az-gold hover:text-az-magenta px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300">
+                        Learn More
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Hero -->
+
+    <!-- @COMPONENT: ClinicalTrials [search, filters, cards grid] -->
+    <section class="py-16 lg:py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Section Header -->
+            <div class="text-center mb-12">
+                <h3 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Current Clinical Trials</h3>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    Explore our comprehensive portfolio of clinical studies across multiple therapeutic areas, 
+                    designed to bring innovative treatments to patients worldwide.
+                </p>
+            </div>
+
+            <!-- Search and Filters -->
+            <div class="mb-12 bg-white rounded-2xl shadow-lg p-6 lg:p-8">
+                <div class="flex flex-col lg:flex-row gap-4 lg:gap-6">
+                    <div class="flex-1">
+                        <input 
+                            type="text" 
+                            placeholder="Search trials by condition, drug name, or keywords..."
+                            class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-az-magenta focus:ring-0 outline-none transition-colors"
+                            data-mock="true"
+                        >
+                    </div>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <select class="px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-az-magenta focus:ring-0 outline-none bg-white" data-mock="true">
+                            <option>All Phases</option>
+                            <option>Phase I</option>
+                            <option>Phase II</option>
+                            <option>Phase III</option>
+                            <option>Phase IV</option>
+                        </select>
+                        <select class="px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-az-magenta focus:ring-0 outline-none bg-white" data-mock="true">
+                            <option>All Locations</option>
+                            <option>North America</option>
+                            <option>Europe</option>
+                            <option>Asia Pacific</option>
+                        </select>
+                        <button class="bg-az-magenta hover:bg-pink-700 text-white px-6 py-3 rounded-xl font-semibold transition-colors duration-200">
+                            Filter
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Clinical Trials Grid -->
+            <!-- @MAP: clinicalTrials.map(trial => ( -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 lg:gap-8">
+                
+                <!-- Trial Card 1 -->
+                <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-100">
+                    <div class="p-6">
+                        <!-- Phase Chip -->
+                        <div class="mb-4">
+                            <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-semibold bg-phase-1 text-white">
+                                Phase I
+                            </span>
+                        </div>
+                        
+                        <!-- Trial Title -->
+                        <h4 class="text-lg font-bold text-gray-900 mb-3 line-clamp-2" data-bind="trial.title">
+                            Novel Oncology Treatment for Advanced Lung Cancer
+                        </h4>
+                        
+                        <!-- Disease Area -->
+                        <div class="mb-4">
+                            <p class="text-sm text-gray-500 mb-1">Disease Area</p>
+                            <p class="text-sm font-medium text-gray-700" data-bind="trial.diseaseArea">Oncology</p>
+                        </div>
+                        
+                        <!-- Recruitment Status -->
+                        <div class="mb-4">
+                            <p class="text-sm text-gray-500 mb-1">Recruitment Status</p>
+                            <span class="inline-flex items-center px-2 py-1 rounded-md text-xs font-medium bg-green-100 text-green-800" data-bind="trial.status">
+                                Actively Recruiting
+                            </span>
+                        </div>
+                        
+                        <!-- Site Location -->
+                        <div class="mb-6">
+                            <p class="text-sm text-gray-500 mb-1">Primary Site</p>
+                            <p class="text-sm font-medium text-gray-700" data-bind="trial.site">Memorial Sloan Kettering, New York</p>
+                        </div>
+                        
+                        <!-- Action Button -->
+                        <button class="w-full bg-az-magenta hover:bg-pink-700 text-white py-2 px-4 rounded-lg font-semibold transition-colors duration-200">
+                            Learn More
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Trial Card 2 -->
+                <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-100">
+                    <div class="p-6">
+                        <div class="mb-4">
+                            <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-semibold bg-phase-2 text-white">
+                                Phase II
+                            </span>
+                        </div>
+                        
+                        <h4 class="text-lg font-bold text-gray-900 mb-3 line-clamp-2" data-bind="trial.title">
+                            Cardiovascular Prevention Study with Innovative Therapy
+                        </h4>
+                        
+                        <div class="mb-4">
+                            <p class="text-sm text-gray-500 mb-1">Disease Area</p>
+                            <p class="text-sm font-medium text-gray-700" data-bind="trial.diseaseArea">Cardiovascular</p>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <p class="text-sm text-gray-500 mb-1">Recruitment Status</p>
+                            <span class="inline-flex items-center px-2 py-1 rounded-md text-xs font-medium bg-yellow-100 text-yellow-800" data-bind="trial.status">
+                                Screening
+                            </span>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <p class="text-sm text-gray-500 mb-1">Primary Site</p>
+                            <p class="text-sm font-medium text-gray-700" data-bind="trial.site">Mayo Clinic, Minnesota</p>
+                        </div>
+                        
+                        <button class="w-full bg-az-magenta hover:bg-pink-700 text-white py-2 px-4 rounded-lg font-semibold transition-colors duration-200">
+                            Learn More
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Trial Card 3 -->
+                <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-100">
+                    <div class="p-6">
+                        <div class="mb-4">
+                            <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-semibold bg-phase-3 text-az-magenta">
+                                Phase III
+                            </span>
+                        </div>
+                        
+                        <h4 class="text-lg font-bold text-gray-900 mb-3 line-clamp-2" data-bind="trial.title">
+                            Diabetes Management with Next-Generation Treatment
+                        </h4>
+                        
+                        <div class="mb-4">
+                            <p class="text-sm text-gray-500 mb-1">Disease Area</p>
+                            <p class="text-sm font-medium text-gray-700" data-bind="trial.diseaseArea">Endocrinology</p>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <p class="text-sm text-gray-500 mb-1">Recruitment Status</p>
+                            <span class="inline-flex items-center px-2 py-1 rounded-md text-xs font-medium bg-green-100 text-green-800" data-bind="trial.status">
+                                Actively Recruiting
+                            </span>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <p class="text-sm text-gray-500 mb-1">Primary Site</p>
+                            <p class="text-sm font-medium text-gray-700" data-bind="trial.site">Joslin Diabetes Center, Boston</p>
+                        </div>
+                        
+                        <button class="w-full bg-az-magenta hover:bg-pink-700 text-white py-2 px-4 rounded-lg font-semibold transition-colors duration-200">
+                            Learn More
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Trial Card 4 -->
+                <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-100">
+                    <div class="p-6">
+                        <div class="mb-4">
+                            <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-semibold bg-phase-4 text-white">
+                                Phase IV
+                            </span>
+                        </div>
+                        
+                        <h4 class="text-lg font-bold text-gray-900 mb-3 line-clamp-2" data-bind="trial.title">
+                            Long-term Safety Study for Respiratory Disease Treatment
+                        </h4>
+                        
+                        <div class="mb-4">
+                            <p class="text-sm text-gray-500 mb-1">Disease Area</p>
+                            <p class="text-sm font-medium text-gray-700" data-bind="trial.diseaseArea">Respiratory</p>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <p class="text-sm text-gray-500 mb-1">Recruitment Status</p>
+                            <span class="inline-flex items-center px-2 py-1 rounded-md text-xs font-medium bg-red-100 text-red-800" data-bind="trial.status">
+                                Not Recruiting
+                            </span>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <p class="text-sm text-gray-500 mb-1">Primary Site</p>
+                            <p class="text-sm font-medium text-gray-700" data-bind="trial.site">Cleveland Clinic, Ohio</p>
+                        </div>
+                        
+                        <button class="w-full bg-gray-300 text-gray-600 py-2 px-4 rounded-lg font-semibold cursor-not-allowed">
+                            View Details
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Trial Card 5 -->
+                <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-100">
+                    <div class="p-6">
+                        <div class="mb-4">
+                            <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-semibold bg-phase-1 text-white">
+                                Phase I
+                            </span>
+                        </div>
+                        
+                        <h4 class="text-lg font-bold text-gray-900 mb-3 line-clamp-2" data-bind="trial.title">
+                            Immunotherapy Approach for Rare Disease Treatment
+                        </h4>
+                        
+                        <div class="mb-4">
+                            <p class="text-sm text-gray-500 mb-1">Disease Area</p>
+                            <p class="text-sm font-medium text-gray-700" data-bind="trial.diseaseArea">Rare Diseases</p>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <p class="text-sm text-gray-500 mb-1">Recruitment Status</p>
+                            <span class="inline-flex items-center px-2 py-1 rounded-md text-xs font-medium bg-blue-100 text-blue-800" data-bind="trial.status">
+                                Starting Soon
+                            </span>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <p class="text-sm text-gray-500 mb-1">Primary Site</p>
+                            <p class="text-sm font-medium text-gray-700" data-bind="trial.site">NIH Clinical Center, Maryland</p>
+                        </div>
+                        
+                        <button class="w-full bg-az-magenta hover:bg-pink-700 text-white py-2 px-4 rounded-lg font-semibold transition-colors duration-200">
+                            Learn More
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Trial Card 6 -->
+                <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-100">
+                    <div class="p-6">
+                        <div class="mb-4">
+                            <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-semibold bg-phase-3 text-az-magenta">
+                                Phase III
+                            </span>
+                        </div>
+                        
+                        <h4 class="text-lg font-bold text-gray-900 mb-3 line-clamp-2" data-bind="trial.title">
+                            Neurological Disorder Treatment with Advanced Therapeutics
+                        </h4>
+                        
+                        <div class="mb-4">
+                            <p class="text-sm text-gray-500 mb-1">Disease Area</p>
+                            <p class="text-sm font-medium text-gray-700" data-bind="trial.diseaseArea">Neurology</p>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <p class="text-sm text-gray-500 mb-1">Recruitment Status</p>
+                            <span class="inline-flex items-center px-2 py-1 rounded-md text-xs font-medium bg-green-100 text-green-800" data-bind="trial.status">
+                                Actively Recruiting
+                            </span>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <p class="text-sm text-gray-500 mb-1">Primary Site</p>
+                            <p class="text-sm font-medium text-gray-700" data-bind="trial.site">Johns Hopkins, Baltimore</p>
+                        </div>
+                        
+                        <button class="w-full bg-az-magenta hover:bg-pink-700 text-white py-2 px-4 rounded-lg font-semibold transition-colors duration-200">
+                            Learn More
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Trial Card 7 -->
+                <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-100">
+                    <div class="p-6">
+                        <div class="mb-4">
+                            <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-semibold bg-phase-2 text-white">
+                                Phase II
+                            </span>
+                        </div>
+                        
+                        <h4 class="text-lg font-bold text-gray-900 mb-3 line-clamp-2" data-bind="trial.title">
+                            Breakthrough Therapy for Autoimmune Disease Management
+                        </h4>
+                        
+                        <div class="mb-4">
+                            <p class="text-sm text-gray-500 mb-1">Disease Area</p>
+                            <p class="text-sm font-medium text-gray-700" data-bind="trial.diseaseArea">Immunology</p>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <p class="text-sm text-gray-500 mb-1">Recruitment Status</p>
+                            <span class="inline-flex items-center px-2 py-1 rounded-md text-xs font-medium bg-yellow-100 text-yellow-800" data-bind="trial.status">
+                                Screening
+                            </span>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <p class="text-sm text-gray-500 mb-1">Primary Site</p>
+                            <p class="text-sm font-medium text-gray-700" data-bind="trial.site">Stanford Medicine, California</p>
+                        </div>
+                        
+                        <button class="w-full bg-az-magenta hover:bg-pink-700 text-white py-2 px-4 rounded-lg font-semibold transition-colors duration-200">
+                            Learn More
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Trial Card 8 -->
+                <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-100">
+                    <div class="p-6">
+                        <div class="mb-4">
+                            <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-semibold bg-phase-1 text-white">
+                                Phase I/II
+                            </span>
+                        </div>
+                        
+                        <h4 class="text-lg font-bold text-gray-900 mb-3 line-clamp-2" data-bind="trial.title">
+                            Precision Medicine Approach for Pediatric Cancer
+                        </h4>
+                        
+                        <div class="mb-4">
+                            <p class="text-sm text-gray-500 mb-1">Disease Area</p>
+                            <p class="text-sm font-medium text-gray-700" data-bind="trial.diseaseArea">Pediatric Oncology</p>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <p class="text-sm text-gray-500 mb-1">Recruitment Status</p>
+                            <span class="inline-flex items-center px-2 py-1 rounded-md text-xs font-medium bg-green-100 text-green-800" data-bind="trial.status">
+                                Actively Recruiting
+                            </span>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <p class="text-sm text-gray-500 mb-1">Primary Site</p>
+                            <p class="text-sm font-medium text-gray-700" data-bind="trial.site">Children's Hospital, Philadelphia</p>
+                        </div>
+                        
+                        <button class="w-full bg-az-magenta hover:bg-pink-700 text-white py-2 px-4 rounded-lg font-semibold transition-colors duration-200">
+                            Learn More
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+            <!-- @END_MAP )) -->
+            
+            <!-- Load More -->
+            <div class="text-center mt-12">
+                <button class="bg-white hover:bg-gray-50 border-2 border-az-magenta text-az-magenta px-8 py-3 rounded-xl font-semibold transition-all duration-200 hover:shadow-lg">
+                    Load More Trials
+                </button>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: ClinicalTrials -->
+
+    <!-- @COMPONENT: Footer [links, contact, legal] -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+                
+                <!-- Company Info -->
+                <div class="lg:col-span-2">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="w-10 h-10 bg-az-gold rounded-lg flex items-center justify-center">
+                            <span class="text-az-magenta font-bold text-xl">AZ</span>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-bold">AstraZeneca</h4>
+                            <p class="text-gray-400 text-sm">Clinical Trials Portal</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-6 max-w-md">
+                        Leading the way in innovative clinical research to transform healthcare outcomes and improve patient lives globally through cutting-edge therapeutics and breakthrough treatments.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-az-gold transition-colors duration-200">
+                            <span class="sr-only">LinkedIn</span>
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-az-gold transition-colors duration-200">
+                            <span class="sr-only">Twitter</span>
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h5 class="text-lg font-semibold mb-4">Research</h5>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-300 hover:text-az-gold transition-colors duration-200">Clinical Trials</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-az-gold transition-colors duration-200">Research Areas</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-az-gold transition-colors duration-200">Publications</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-az-gold transition-colors duration-200">Partnerships</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Support -->
+                <div>
+                    <h5 class="text-lg font-semibold mb-4">Support</h5>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-300 hover:text-az-gold transition-colors duration-200">Patient Resources</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-az-gold transition-colors duration-200">Healthcare Professionals</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-az-gold transition-colors duration-200">Contact Us</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-az-gold transition-colors duration-200">FAQs</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Bottom Bar -->
+            <div class="border-t border-gray-800 mt-12 pt-8">
+                <div class="flex flex-col lg:flex-row justify-between items-center">
+                    <p class="text-gray-400 text-sm mb-4 lg:mb-0">
+                        © 2024 AstraZeneca. All rights reserved.
+                    </p>
+                    <div class="flex flex-wrap gap-6">
+                        <a href="#" class="text-gray-400 hover:text-az-gold text-sm transition-colors duration-200">Privacy Policy</a>
+                        <a href="#" class="text-gray-400 hover:text-az-gold text-sm transition-colors duration-200">Terms of Service</a>
+                        <a href="#" class="text-gray-400 hover:text-az-gold text-sm transition-colors duration-200">Cookie Policy</a>
+                        <a href="#" class="text-gray-400 hover:text-az-gold text-sm transition-colors duration-200">Accessibility</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- @END_COMPONENT: Footer -->
+
+    <script>
+    // TODO: Implement React component state management, API integration, and interactive features
+    (function() {
+        // Mock data structure for clinical trials
+        const mockTrialData = {
+            trials: [
+                {
+                    id: 1,
+                    title: "Novel Oncology Treatment for Advanced Lung Cancer",
+                    diseaseArea: "Oncology",
+                    phase: "Phase I",
+                    status: "Actively Recruiting",
+                    site: "Memorial Sloan Kettering, New York"
+                },
+                {
+                    id: 2,
+                    title: "Cardiovascular Prevention Study with Innovative Therapy",
+                    diseaseArea: "Cardiovascular",
+                    phase: "Phase II",
+                    status: "Screening",
+                    site: "Mayo Clinic, Minnesota"
+                }
+                // Additional trial data would be loaded from API
+            ]
+        };
+
+        // Initialize mobile menu functionality
+        function initMobileMenu() {
+            const mobileMenuButton = document.querySelector('.md\\:hidden button');
+            if (mobileMenuButton) {
+                mobileMenuButton.addEventListener('click', function() {
+                    // TODO: Implement mobile menu toggle functionality
+                    console.log('Mobile menu clicked');
+                });
+            }
+        }
+
+        // Initialize search and filter functionality
+        function initSearchAndFilters() {
+            const searchInput = document.querySelector('input[type="text"]');
+            const phaseFilter = document.querySelectorAll('select')[0];
+            const locationFilter = document.querySelectorAll('select')[1];
+            const filterButton = document.querySelector('button:contains("Filter")');
+
+            if (searchInput) {
+                searchInput.addEventListener('input', function() {
+                    // TODO: Implement real-time search functionality
+                    console.log('Search term:', this.value);
+                });
+            }
+
+            // TODO: Add event listeners for filters and implement filtering logic
+        }
+
+        // Initialize card interactions
+        function initCardInteractions() {
+            const trialCards = document.querySelectorAll('.bg-white.rounded-2xl');
+            
+            trialCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    // TODO: Navigate to trial detail page
+                    console.log('Trial card clicked');
+                });
+            });
+        }
+
+        // Initialize when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            initMobileMenu();
+            initSearchAndFilters();
+            initCardInteractions();
+        });
+    })();
+    </script>
+
+</body>
+</html>
