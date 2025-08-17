@@ -28,8 +28,11 @@ export default function Header() {
             <a href="/eligibility" className="text-white hover:text-az-gold transition-colors duration-200 font-medium">
               Eligibility
             </a>
-            <a href="/medical-info" className="text-white hover:text-az-gold transition-colors duration-200 font-medium">
-              Medical Info
+            <a href="/appointment-booking" className="text-white hover:text-az-gold transition-colors duration-200 font-medium">
+              Book Appointment
+            </a>
+            <a href="/dashboard" className="text-white hover:text-az-gold transition-colors duration-200 font-medium">
+              Dashboard
             </a>
             <Button className="bg-az-gold hover:bg-yellow-500 text-az-magenta font-semibold">
               Sign In
@@ -59,8 +62,11 @@ export default function Header() {
               <a href="/eligibility" className="text-white hover:text-az-gold transition-colors duration-200 font-medium">
                 Eligibility
               </a>
-              <a href="/medical-info" className="text-white hover:text-az-gold transition-colors duration-200 font-medium">
-                Medical Info
+              <a href="/appointment-booking" className="text-white hover:text-az-gold transition-colors duration-200 font-medium">
+                Book Appointment
+              </a>
+              <a href="/dashboard" className="text-white hover:text-az-gold transition-colors duration-200 font-medium">
+                Dashboard
               </a>
               <Button className="bg-az-gold hover:bg-yellow-500 text-az-magenta font-semibold w-fit">
                 Sign In
