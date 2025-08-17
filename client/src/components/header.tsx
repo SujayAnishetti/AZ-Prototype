@@ -22,14 +22,14 @@ export default function Header() {
           
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <a href="#" className="text-white hover:text-az-gold transition-colors duration-200 font-medium">
+            <a href="/" className="text-white hover:text-az-gold transition-colors duration-200 font-medium">
               Trials
             </a>
-            <a href="#" className="text-white hover:text-az-gold transition-colors duration-200 font-medium">
-              Research
+            <a href="/eligibility" className="text-white hover:text-az-gold transition-colors duration-200 font-medium">
+              Eligibility
             </a>
-            <a href="#" className="text-white hover:text-az-gold transition-colors duration-200 font-medium">
-              Contact
+            <a href="/medical-info" className="text-white hover:text-az-gold transition-colors duration-200 font-medium">
+              Medical Info
             </a>
             <Button className="bg-az-gold hover:bg-yellow-500 text-az-magenta font-semibold">
               Sign In
@@ -53,14 +53,14 @@ export default function Header() {
         {mobileMenuOpen && (
           <div className="md:hidden pb-4">
             <div className="flex flex-col space-y-4">
-              <a href="#" className="text-white hover:text-az-gold transition-colors duration-200 font-medium">
+              <a href="/" className="text-white hover:text-az-gold transition-colors duration-200 font-medium">
                 Trials
               </a>
-              <a href="#" className="text-white hover:text-az-gold transition-colors duration-200 font-medium">
-                Research
+              <a href="/eligibility" className="text-white hover:text-az-gold transition-colors duration-200 font-medium">
+                Eligibility
               </a>
-              <a href="#" className="text-white hover:text-az-gold transition-colors duration-200 font-medium">
-                Contact
+              <a href="/medical-info" className="text-white hover:text-az-gold transition-colors duration-200 font-medium">
+                Medical Info
               </a>
               <Button className="bg-az-gold hover:bg-yellow-500 text-az-magenta font-semibold w-fit">
                 Sign In

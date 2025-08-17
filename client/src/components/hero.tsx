@@ -14,12 +14,14 @@ export default function Hero() {
             Join us in advancing healthcare research and improving patient lives worldwide.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button 
-              size="lg"
-              className="bg-az-gold hover:bg-yellow-500 text-az-magenta font-bold text-lg px-8 py-4 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg"
-            >
-              Explore Clinical Trials
-            </Button>
+            <a href="/eligibility">
+              <Button 
+                size="lg"
+                className="bg-az-gold hover:bg-yellow-500 text-az-magenta font-bold text-lg px-8 py-4 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg"
+              >
+                Check Eligibility
+              </Button>
+            </a>
             <Button 
               variant="outline"
               size="lg"
