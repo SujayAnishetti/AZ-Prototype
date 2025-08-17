@@ -122,7 +122,11 @@ export class MemStorage implements IStorage {
 
   async createClinicalTrial(insertTrial: InsertClinicalTrial): Promise<ClinicalTrial> {
     const id = randomUUID();
-    const trial: ClinicalTrial = { ...insertTrial, id };
+    const trial: ClinicalTrial = {
+  ...insertTrial,
+  id,
+  description: insertTrial.description ?? null,
+};
     this.clinicalTrials.set(id, trial);
     return trial;
   }
