@@ -53,31 +53,31 @@ export default function Eligibility() {
     };
 
     if (result.eligible) {
-      result.eligibleTrials = [
+      (result.eligibleTrials as string[]).push(
         "Novel Oncology Treatment for Advanced Lung Cancer",
         "Cardiovascular Prevention Study with Innovative Therapy"
-      ];
-      result.recommendations = [
+      );
+      (result.recommendations as string[]).push(
         "You may be eligible for 2 clinical trials based on your information",
         "Speak with your healthcare provider about participating",
         "Review the detailed trial requirements"
-      ];
-      result.nextSteps = [
+      );
+      (result.nextSteps as string[]).push(
         "Schedule a consultation with our clinical research team",
         "Complete additional medical screening",
         "Review and sign informed consent documents"
-      ];
+      );
     } else {
-      result.recommendations = [
+      (result.recommendations as string[]).push(
         "Based on your current information, you may not meet the age requirements for our active trials",
         "New trials are constantly opening - check back regularly",
         "Speak with your healthcare provider about other treatment options"
-      ];
-      result.nextSteps = [
+      );
+      (result.nextSteps as string[]).push(
         "Contact your healthcare provider for alternative treatment options",
         "Sign up for notifications about new trials",
         "Consider participating in patient advocacy groups"
-      ];
+      );
     }
 
     setEligibilityResult(result);

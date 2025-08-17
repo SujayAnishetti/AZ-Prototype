@@ -132,10 +132,10 @@ export default function EligibilityResults({ result, formData }: EligibilityResu
       <div className="flex flex-col sm:flex-row gap-4 pt-6">
         {result.eligible ? (
           <>
-            <Link href="/registration">
+            <Link href="/appointment-booking">
               <Button className="bg-az-magenta hover:bg-pink-700 text-white flex items-center space-x-2 flex-1">
                 <Calendar className="w-4 h-4" />
-                <span>Start Registration Process</span>
+                <span>Schedule Your Appointment</span>
               </Button>
             </Link>
             <Button variant="outline" className="border-az-magenta text-az-magenta hover:bg-az-magenta hover:text-white flex items-center space-x-2 flex-1">

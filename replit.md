@@ -14,13 +14,18 @@ Preferred communication style: Simple, everyday language.
 The client-side is built using modern React with TypeScript, implementing a component-based architecture:
 
 - **Framework**: React 18 with TypeScript for type safety and developer experience
-- **Routing**: Wouter for lightweight client-side routing
+- **Routing**: Wouter for lightweight client-side routing with dynamic route parameters
 - **State Management**: TanStack Query (React Query) for server state management and caching
+- **Authentication**: Client-side authentication with localStorage session management
 - **UI Framework**: Custom design system built on Radix UI primitives with Tailwind CSS
 - **Component Library**: Comprehensive shadcn/ui component library for consistent design patterns
 - **Build Tool**: Vite for fast development and optimized production builds
 
-The frontend follows a modular structure with reusable components, custom hooks, and a well-organized file structure separating UI components, pages, and utilities.
+The frontend follows a modular structure with reusable components, custom hooks, and a well-organized file structure separating UI components, pages, and utilities. Key pages include:
+- **Trial Detail Pages**: Individual clinical trial information with tabbed content
+- **Authentication Pages**: Login and registration with form validation
+- **Dashboard**: Patient-specific interface with study information and tools
+- **Appointment Booking**: Calendar-based scheduling system with approval workflow
 
 ### Backend Architecture
 The server-side implements a RESTful API architecture:
@@ -42,11 +47,14 @@ The application is designed for PostgreSQL integration with flexible storage abs
 - **Storage Interface**: Abstract storage layer supporting multiple implementations (memory, database)
 
 ### Authentication and Authorization
-The application includes infrastructure for user management:
+The application includes a complete authentication system for user management:
 
 - **User Schema**: Defined user entity with username/password authentication
-- **Session Management**: PostgreSQL session store integration for persistent sessions
-- **Security**: Password hashing and secure session handling (implementation pending)
+- **Session Management**: localStorage-based session handling with user information storage
+- **Login/Signup**: Complete login and registration flow with form validation
+- **Authentication Guards**: Route protection requiring authentication for sensitive features
+- **Conditional Navigation**: Header and navigation visibility based on authentication status
+- **User Workflow**: Trial discovery → detail pages → eligibility check → login/signup → appointment booking → dashboard access
 
 ### Design System and Styling
 Comprehensive design system built for healthcare/pharmaceutical branding:

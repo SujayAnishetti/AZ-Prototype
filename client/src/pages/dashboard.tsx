@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
+import { requireAuth, getCurrentUser } from "@/lib/auth";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
@@ -14,6 +15,10 @@ import SymptomReportDialog from "@/components/symptom-report-dialog";
 
 export default function Dashboard() {
   const [isSymptomDialogOpen, setIsSymptomDialogOpen] = useState(false);
+  
+  useEffect(() => {
+    requireAuth();
+  }, []);
 
   const patientInfo = {
     name: "Sarah Johnson",

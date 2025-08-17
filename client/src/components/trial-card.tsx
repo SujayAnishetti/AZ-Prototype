@@ -62,16 +62,18 @@ export default function TrialCard({ trial }: TrialCardProps) {
         </div>
         
         {/* Action Button */}
-        <Button 
-          className={`w-full font-semibold transition-colors duration-200 ${
-            isNotRecruiting 
-              ? "bg-gray-300 text-gray-600 cursor-not-allowed hover:bg-gray-300" 
-              : "bg-az-magenta hover:bg-pink-700 text-white"
-          }`}
-          disabled={isNotRecruiting}
-        >
-          {isNotRecruiting ? "View Details" : "Learn More"}
-        </Button>
+        <a href={`/trial/${trial.id}`}>
+          <Button 
+            className={`w-full font-semibold transition-colors duration-200 ${
+              isNotRecruiting 
+                ? "bg-gray-300 text-gray-600 cursor-not-allowed hover:bg-gray-300" 
+                : "bg-az-magenta hover:bg-pink-700 text-white"
+            }`}
+            disabled={isNotRecruiting}
+          >
+            {isNotRecruiting ? "View Details" : "Learn More"}
+          </Button>
+        </a>
       </div>
     </div>
   );

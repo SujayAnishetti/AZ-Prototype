@@ -1,77 +1,68 @@
-import { Button } from "@/components/ui/button";
+import { Mail, Phone, MapPin } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-white py-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+    <footer className="bg-gray-900 text-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           
           {/* Company Info */}
-          <div className="lg:col-span-2">
-            <div className="flex items-center space-x-3 mb-6">
-              <div className="w-10 h-10 bg-az-gold rounded-lg flex items-center justify-center">
-                <span className="text-az-magenta font-bold text-xl">AZ</span>
+          <div className="space-y-4">
+            <div className="flex items-center space-x-3">
+              <div className="w-8 h-8 bg-az-gold rounded-lg flex items-center justify-center">
+                <span className="text-az-magenta font-bold text-lg">AZ</span>
               </div>
-              <div>
-                <h4 className="text-xl font-bold">AstraZeneca</h4>
-                <p className="text-gray-400 text-sm">Clinical Trials Portal</p>
-              </div>
+              <span className="text-xl font-bold">AstraZeneca</span>
             </div>
-            <p className="text-gray-300 mb-6 max-w-md">
-              Leading the way in innovative clinical research to transform healthcare outcomes and improve patient lives globally through cutting-edge therapeutics and breakthrough treatments.
+            <p className="text-gray-400 text-sm">
+              Advancing healthcare through innovative clinical research and pharmaceutical excellence.
             </p>
-            <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-az-gold transition-colors duration-200">
-                <span className="sr-only">LinkedIn</span>
-                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                </svg>
-              </a>
-              <a href="#" className="text-gray-400 hover:text-az-gold transition-colors duration-200">
-                <span className="sr-only">Twitter</span>
-                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
-                </svg>
-              </a>
+          </div>
+
+          {/* Clinical Trials */}
+          <div>
+            <h3 className="font-semibold text-white mb-4">Clinical Trials</h3>
+            <ul className="space-y-2 text-sm text-gray-400">
+              <li><a href="/" className="hover:text-az-gold transition-colors">Browse Trials</a></li>
+              <li><a href="/eligibility" className="hover:text-az-gold transition-colors">Check Eligibility</a></li>
+              <li><a href="#" className="hover:text-az-gold transition-colors">Study Locations</a></li>
+              <li><a href="#" className="hover:text-az-gold transition-colors">Investigator Portal</a></li>
+            </ul>
+          </div>
+
+          {/* Patient Resources */}
+          <div>
+            <h3 className="font-semibold text-white mb-4">Patient Resources</h3>
+            <ul className="space-y-2 text-sm text-gray-400">
+              <li><a href="#" className="hover:text-az-gold transition-colors">Patient Safety</a></li>
+              <li><a href="#" className="hover:text-az-gold transition-colors">FAQs</a></li>
+              <li><a href="#" className="hover:text-az-gold transition-colors">Support Groups</a></li>
+              <li><a href="#" className="hover:text-az-gold transition-colors">Educational Materials</a></li>
+            </ul>
+          </div>
+
+          {/* Contact */}
+          <div>
+            <h3 className="font-semibold text-white mb-4">Contact Us</h3>
+            <div className="space-y-3 text-sm text-gray-400">
+              <div className="flex items-center space-x-2">
+                <Phone className="w-4 h-4" />
+                <span>1-800-CLINICAL</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <Mail className="w-4 h-4" />
+                <span>trials@astrazeneca.com</span>
+              </div>
+              <div className="flex items-start space-x-2">
+                <MapPin className="w-4 h-4 mt-0.5" />
+                <span>Clinical Research Center<br />123 Medical Drive<br />Research City, NY 10001</span>
+              </div>
             </div>
-          </div>
-          
-          {/* Quick Links */}
-          <div>
-            <h5 className="text-lg font-semibold mb-4">Research</h5>
-            <ul className="space-y-3">
-              <li><a href="#" className="text-gray-300 hover:text-az-gold transition-colors duration-200">Clinical Trials</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-az-gold transition-colors duration-200">Research Areas</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-az-gold transition-colors duration-200">Publications</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-az-gold transition-colors duration-200">Partnerships</a></li>
-            </ul>
-          </div>
-          
-          {/* Support */}
-          <div>
-            <h5 className="text-lg font-semibold mb-4">Support</h5>
-            <ul className="space-y-3">
-              <li><a href="#" className="text-gray-300 hover:text-az-gold transition-colors duration-200">Patient Resources</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-az-gold transition-colors duration-200">Healthcare Professionals</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-az-gold transition-colors duration-200">Contact Us</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-az-gold transition-colors duration-200">FAQs</a></li>
-            </ul>
           </div>
         </div>
-        
-        {/* Bottom Bar */}
-        <div className="border-t border-gray-800 mt-12 pt-8">
-          <div className="flex flex-col lg:flex-row justify-between items-center">
-            <p className="text-gray-400 text-sm mb-4 lg:mb-0">
-              © 2024 AstraZeneca. All rights reserved.
-            </p>
-            <div className="flex flex-wrap gap-6">
-              <a href="#" className="text-gray-400 hover:text-az-gold text-sm transition-colors duration-200">Privacy Policy</a>
-              <a href="#" className="text-gray-400 hover:text-az-gold text-sm transition-colors duration-200">Terms of Service</a>
-              <a href="#" className="text-gray-400 hover:text-az-gold text-sm transition-colors duration-200">Cookie Policy</a>
-              <a href="#" className="text-gray-400 hover:text-az-gold text-sm transition-colors duration-200">Accessibility</a>
-            </div>
-          </div>
+
+        <div className="border-t border-gray-800 mt-8 pt-8 text-center text-sm text-gray-400">
+          <p>&copy; 2024 AstraZeneca. All rights reserved. | Privacy Policy | Terms of Use | Clinical Trial Transparency</p>
         </div>
       </div>
     </footer>

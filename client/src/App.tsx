@@ -10,18 +10,22 @@ import MedicalInfo from "@/pages/medical-info";
 import AppointmentBooking from "@/pages/appointment-booking";
 import Dashboard from "@/pages/dashboard";
 import InvestigatorDashboard from "@/pages/investigator-dashboard";
+import TrialDetail from "@/pages/trial-detail";
+import Login from "@/pages/login";
 import NotFound from "@/pages/not-found";
 
 function Router() {
   return (
     <Switch>
       <Route path="/" component={Home} />
+      <Route path="/trial/:id" component={TrialDetail} />
       <Route path="/eligibility" component={Eligibility} />
       <Route path="/registration" component={Registration} />
       <Route path="/medical-info" component={MedicalInfo} />
       <Route path="/appointment-booking" component={AppointmentBooking} />
       <Route path="/dashboard" component={Dashboard} />
       <Route path="/investigator-dashboard" component={InvestigatorDashboard} />
+      <Route path="/login" component={Login} />
       <Route component={NotFound} />
     </Switch>
   );
