@@ -1,4 +1,4 @@
-import { type User, type InsertUser, type ClinicalTrial, type InsertClinicalTrial } from "@shared/schema";
+import { type User, type InsertUser, type ClinicalTrial, type InsertClinicalTrial } from "@shared/schema.js";
 import { randomUUID } from "crypto";
 
 export interface IStorage {
@@ -22,7 +22,7 @@ export class MemStorage implements IStorage {
     this.initializeClinicalTrials();
   }
 
-  private async initializeClinicalTrials() {
+  public async initializeClinicalTrials() {
     const sampleTrials: InsertClinicalTrial[] = [
       {
         title: "Novel Oncology Treatment for Advanced Lung Cancer",
@@ -132,4 +132,10 @@ export class MemStorage implements IStorage {
   }
 }
 
-export const storage = new MemStorage();
+const createStorage = async () => {
+  const storageInstance = new MemStorage();
+  await storageInstance.initializeClinicalTrials();
+  return storageInstance;
+};
+
+export const storage = await createStorage();
